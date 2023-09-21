@@ -16,21 +16,11 @@ headers = {
 }
 
 
-# User data to create a single user account
-user_data = {
-    "name": "test-agent18",
-    "username": "test.agent18",
-    "email": "test.agent18@gmail.com",
-    "password": "1234",
-}
+# Number of users to create
+base_number = 11 # the number where the count will start
+num_users = 3  # Change this to the desired number of users
 
-"""
-User data to create several accounts
-
-# Define the number of users you want to create
-num_users = 2  # Change this number to the desired number of users
-
-for i in range(17, num_users + 1):
+for i in range(base_number, base_number + num_users):
     user_data = {
         "name": "test-agent" + str(i),
         "username": "test.agent" + str(i),
@@ -38,19 +28,16 @@ for i in range(17, num_users + 1):
         "password": "1234",
     }
 
-# You can also use the try-catch but don't forget about not avoiding loop
-"""
+    try:
+        # Send POST request to create the user
+        response = requests.post(url, headers=headers, json=user_data)
 
-try:
-    # Send POST request to create the user
-    response = requests.post(url, headers=headers, json=user_data)
+        # Check the response status code
+        if response.status_code == 200:
+            print(f"User test.agent-{i} created successfully!")
+        else:
+            print(f"Failed to create user test.agent{i}. Status code: {response.status_code}")
+            print(response.text)
 
-    # Check the response status code
-    if response.status_code == 200:
-        print("User created successfully!")
-    else:
-        print(f"Failed to create user. Status code: {response.status_code}")
-        print(response.text)
-
-except Exception as e:
-    print(f"An error occurred: {str(e)}")
+    except Exception as e:
+        print(f"An error occurred while creating user {i}: {str(e)}")

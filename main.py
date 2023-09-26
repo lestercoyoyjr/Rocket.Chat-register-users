@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Rocket.Chat API endpoint for creating a user
-url = "https://lestercch.rocket.chat/api/v1/users.create"
+url = "http://localhost:3000/api/v1/users.create"
 
 # Headers with authentication tokens
 headers = {
@@ -26,6 +26,8 @@ for i in range(base_number, base_number + num_users):
         "username": "test.agent" + str(i),
         "email": "test.agent" + str(i) + "@gmail.com",
         "password": "1234",
+        "active" : True,
+        "roles":["user"]        
     }
 
     try:

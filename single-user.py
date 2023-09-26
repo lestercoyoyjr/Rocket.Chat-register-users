@@ -21,6 +21,8 @@ user_data = {
     "username": "test.agent11",
     "email": "test.agent11@gmail.com",
     "password": "1234",
+    "active" : True,
+    "roles":["user"]        
 }
 
 try:

@@ -17,8 +17,8 @@ headers = {
 
 
 # Number of users to create
-base_number = 11 # the number where the count will start. It can start in 1 or any other.
-num_users = 19  # Change this to the desired number of users
+base_number = 1 # the number where the count will start. It can start in 1 or any other.
+num_users = 4  # Change this to the desired number of users
 
 for i in range(base_number, base_number + num_users):
     user_data = {

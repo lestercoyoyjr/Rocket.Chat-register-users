@@ -5,7 +5,7 @@ A basic way to register user using a script. The script runs in three simple ste
 
 2. The file will ask you the starting number (e.g., 1) where the test users will be created (e.g., test.user-1). Later, it will ask you the amount/number of users to be created:
 
-![ScreenShot](/images/image.png)
+![Alt text](images/image.png)
 
 3. After this, it will create user according to these parameters (They can be edited if required):
 

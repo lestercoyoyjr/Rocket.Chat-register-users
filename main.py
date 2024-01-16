@@ -33,9 +33,9 @@ print("Number of users:", num_users)
 
 for i in range(base_number, base_number + num_users):
     user_data = {
-        "name": "test-agent" + str(i),
-        "username": "test.agent" + str(i),
-        "email": "test.agent" + str(i) + "@gmail.com",
+        "name": "test-user" + str(i),
+        "username": "test.user" + str(i),
+        "email": "test.user" + str(i) + "@gmail.com",
         "password": "1234",
         "active" : True,
         "roles":["user"]        

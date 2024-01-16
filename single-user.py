@@ -6,7 +6,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Rocket.Chat API endpoint for creating a user
-url = "http://localhost:3000/api/v1/users.create"
+base_url= os.getenv("URL")
+url = base_url + "/api/v1/users.create"
 
 # Headers with authentication tokens
 headers = {

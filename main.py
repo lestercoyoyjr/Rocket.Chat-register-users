@@ -6,7 +6,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Rocket.Chat API endpoint for creating a user
-url = "http://localhost:3000/api/v1/users.create"
+base_url= os.getenv("URL")
+url = base_url + "/api/v1/users.create"
 
 # Headers with authentication tokens
 headers = {
@@ -17,8 +18,18 @@ headers = {
 
 
 # Number of users to create
-base_number = 1 # the number where the count will start
-num_users = 4  # Change this to the desired number of users
+while True:
+    try:
+        base_number = int(input("Enter the starting number (e.g., 1): "))
+        num_users = int(input("Enter the number of users: "))
+        break  # Break out of the loop if both inputs are valid integers
+    except ValueError:
+        print("Please enter valid integer values for both the starting number and the number of users. Try again.\n\n")
+
+# Now you can use base_number and num_users in your code
+print("Starting number:", base_number)
+print("Number of users:", num_users)
+
 
 for i in range(base_number, base_number + num_users):
     user_data = {
